@@ -5,7 +5,7 @@ import dotenv
 dotenv.load_dotenv()
 
 API_TOKEN = os.getenv("TOKEN")
-if API_TOKEN is None or "your api token here" or "":
+if API_TOKEN in [None, "your api token here", ""]:
     print("The script is missing the API Token.")
     quit()
 API = "https://accgen.cathook.club/api/v1/account/" + API_TOKEN
