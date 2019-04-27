@@ -10,10 +10,6 @@ if API_TOKEN in [None, "your api token here", ""]:
     quit()
 API = "https://accgen.cathook.club/api/v1/account/" + API_TOKEN
 
-def GetAccount():
-    r = requests.get(API)
-    return r.json()
-
 amount = None
 while not amount:
     try:
@@ -29,7 +25,6 @@ print("\nGetting Accounts . . .\n")
 acc_txt.write("\n")
 for _ in range(amount):
     acc = requests.get(API).json()
-    #acc = GetAccount()
     try:
         print("{}:{}".format(acc['login'], acc['login']))
         acc_txt.write("{}:{}\n".format(acc['login'], acc['password']))
