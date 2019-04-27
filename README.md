@@ -16,7 +16,8 @@ TOKEN = "your api token here"
 
 ## Notes
 
-The Accounts will be seperated by an empty line.
+Each run of this tool will seperated by an empty line.
+This way you have each "batch" of accounts in its own block.
 
 ## Thanks
 
