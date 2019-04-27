@@ -18,7 +18,7 @@ amount = None
 while not amount:
     try:
         amount = int(input("How many Accounts to you want? "))
-    except TypeError:
+    except ValueError:
         print("Needs to be a number...")
         continue
     except KeyboardInterrupt:
@@ -30,8 +30,12 @@ acc_txt.write("\n")
 for _ in range(amount):
     acc = requests.get(API).json()
     #acc = GetAccount()
-    print("{}:{}".format(acc['login'], acc['login']))
-    acc_txt.write("{}:{}\n".format(acc['login'], acc['password']))
+    try:
+        print("{}:{}".format(acc['login'], acc['login']))
+        acc_txt.write("{}:{}\n".format(acc['login'], acc['password']))
+    except KeyError:
+        print("\n" + acc['error'])
+        quit()
 
 acc_txt.close()
 print("\nAccounts have been appended to the accounts.txt")
