@@ -6,7 +6,7 @@ This programm will get you as many accounts from the [API](https://accgen.cathoo
 
 1. `git clone` this repo
 2. Add a `.env` as below.
-3. Start the script ¯\_(ツ)_/¯
+3. Start the script ¯\\\_(ツ)_/¯☆ﾟ.*･｡ﾟ
 
 ### The .env file
 
