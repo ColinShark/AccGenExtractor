@@ -22,7 +22,7 @@ while not amount:
 
 acc_txt = open('accounts.txt', 'a')
 print("\nGetting Accounts . . .\n")
-acc_txt.write("\n")
+
 for _ in range(amount):
     acc = requests.get(API).json()
     try:
@@ -31,6 +31,6 @@ for _ in range(amount):
     except KeyError:
         print("\n" + acc['error'])
         quit()
-
+acc_txt.write("\n")
 acc_txt.close()
 print("\nAccounts have been appended to the accounts.txt")
